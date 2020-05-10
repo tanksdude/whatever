@@ -8,43 +8,16 @@
 ; code
 #SingleInstance
 
-NUM := 1000 - 1
-arr := []
-arrlength := 0
+NUM := 1000
+answer := 0
 
 counter := 1
-while counter <= floor(NUM/3)
+while counter < NUM
 {
-	arr.Push(counter * 3)
-	arrlength := arrlength + 1
-	counter := counter + 1
-}
-; brackets are required to be like this, unless they're for single line statements (at least I'm pretty sure)
-
-counter := 1
-while counter <= floor(NUM/5)
-{
-	if arr not in counter*5 ; such backwards syntax
-	{
-		arr.Push(counter * 5)
-		arrlength := arrlength + 1
+	if (Mod(counter, 3) == 0 or Mod(counter, 5) == 0) {
+		answer := answer + counter
 	}
 	counter := counter + 1
-}
-
-counter := 1
-answer := 0
-while counter <= arrlength
-{
-	answer := answer + arr[counter]
-	counter := counter + 1
-}
-
-; "printing" the answer
-
-nothing := ""
-if (answer == nothing) {
-	answer := "something failed"
 }
 
 msgbox, %answer%
