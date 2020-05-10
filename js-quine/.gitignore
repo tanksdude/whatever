@@ -1,0 +1,4 @@
+# The programs are HTML and JS files, so this is unnecessary
+*.exe
+*.out
+*.app
